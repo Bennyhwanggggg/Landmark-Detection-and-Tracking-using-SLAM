@@ -93,7 +93,7 @@ class robot:
         ##    as list.append([index, dx, dy]), this format is important for data creation done later
         
             x, y = landmark
-            dx, dy = self.x - x + self.measurement_noise*self.rand(), self.y - y + self.measurement_noise*self.rand()
+            dx, dy = x - self.x + self.measurement_noise*self.rand(), y - self.y + self.measurement_noise*self.rand()
         
             if abs(dx) <= self.measurement_range and abs(dy) <= self.measurement_range:
                 measurements.append([idx, dx, dy])

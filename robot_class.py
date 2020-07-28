@@ -95,7 +95,7 @@ class robot:
             x, y = landmark
             dx, dy = self.x - x + self.measurement_noise*self.rand(), self.y - y + self.measurement_noise*self.rand()
         
-            if dx <= self.measurement_range and dy <= self.measurement_range:
+            if abs(dx) <= self.measurement_range and abs(dy) <= self.measurement_range:
                 measurements.append([idx, dx, dy])
         ## TODO: return the final, complete list of measurements
         return measurements
